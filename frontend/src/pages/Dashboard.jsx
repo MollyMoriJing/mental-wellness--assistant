@@ -1,19 +1,23 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import api from '../../api'
+import Navbar from '../components/Navbar'
+import MoodLogger from '../components/MoodLogger'
 
 export default function Dashboard() {
   const [moods, setMoods] = useState([])
 
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    axios.get('/api/user/moods', {
-      headers: { Authorization: `Bearer ${token}` }
-    }).then(res => setMoods(res.data)).catch(() => setMoods([]))
+    api.get('/user/moods').then(res => setMoods(res.data)).catch(() => setMoods([]))
   }, [])
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
+    <div>
+      <Navbar />
+      <div className="max-w-2xl mx-auto p-4">
       <h2 className="text-xl font-semibold mb-4">Mood History</h2>
+      <MoodLogger onLogged={() => {
+        api.get('/user/moods').then(res => setMoods(res.data)).catch(() => {})
+      }} />
       <div className="space-y-2">
         {moods.length === 0 ? (
           <p className="text-gray-500">No mood entries yet.</p>
@@ -26,6 +30,7 @@ export default function Dashboard() {
             </div>
           ))
         )}
+      </div>
       </div>
     </div>
   )

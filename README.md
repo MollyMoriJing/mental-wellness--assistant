@@ -67,6 +67,7 @@ See `.env.example` for required variables:
 ```
 OPENAI_API_KEY=your-key
 PINECONE_API_KEY=your-key
+PINECONE_ENVIRONMENT=us-east4-gcp
 MYSQL_URL=mysql+pymysql://user:pass@localhost/db
 JWT_SECRET_KEY=secret
 ```

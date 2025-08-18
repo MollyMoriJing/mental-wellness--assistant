@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import axios from 'axios'
+import api from '../../api'
+import Navbar from './Navbar'
 
 export default function ChatBox() {
   const [messages, setMessages] = useState([])
@@ -7,18 +8,15 @@ export default function ChatBox() {
 
   const send = async () => {
     if (!input.trim()) return
-    const token = localStorage.getItem("token")
-    const res = await axios.post(
-      '/api/chat',
-      { message: input },
-      { headers: { Authorization: `Bearer ${token}` } }
-    )
+    const res = await api.post('/chat', { message: input })
     setMessages([...messages, { user: input, bot: res.data.response }])
     setInput("")
   }
 
   return (
-    <div className="p-4 max-w-xl mx-auto">
+    <div>
+      <Navbar />
+      <div className="p-4 max-w-xl mx-auto">
       <div className="space-y-2">
         {messages.map((m, i) => (
           <div key={i} className="bg-gray-100 p-2 rounded">
@@ -40,6 +38,7 @@ export default function ChatBox() {
         >
           Send
         </button>
+      </div>
       </div>
     </div>
   )
