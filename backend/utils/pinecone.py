@@ -1,5 +1,7 @@
-import pinecone
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Initialize Pinecone only if API key is available
 pinecone_initialized = False
@@ -11,7 +13,6 @@ def init_pinecone():
         return
     
     api_key = os.getenv("PINECONE_API_KEY")
-    environment = os.getenv("PINECONE_ENVIRONMENT", "us-east4-gcp")
     
     if not api_key:
         print("Warning: PINECONE_API_KEY not found. Pinecone features will be disabled.")
