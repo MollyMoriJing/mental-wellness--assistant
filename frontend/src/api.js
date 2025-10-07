@@ -1,9 +1,10 @@
 import axios from 'axios'
 
+// Force production to hit Railway API directly (env var not being picked up on Vercel)
 const api = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL || 'http://localhost:5001'}/api`,
+  baseURL: 'https://mental-wellness-assistant-production.up.railway.app/api',
   headers: { 'Content-Type': 'application/json' }
-  })
+})
 
 api.interceptors.request.use(config => {
   const token = localStorage.getItem('token')
