@@ -14,6 +14,10 @@ from backend.models.user import db
 from backend.routes.auth import auth_bp
 from backend.routes.user import user_bp
 from backend.routes.chat import chat_bp
+from backend.routes.chat_history import chat_history_bp
+from backend.routes.community import community_bp
+from backend.routes.coaching import coaching_bp
+from flask_socketio import SocketIO
 from backend.config import Config
 # flake8: noqa
 
@@ -33,13 +37,38 @@ def create_app():
     app.register_blueprint(auth_bp, url_prefix='/api')
     app.register_blueprint(user_bp, url_prefix='/api')
     app.register_blueprint(chat_bp, url_prefix='/api')
+    app.register_blueprint(chat_history_bp, url_prefix='/api')
+    app.register_blueprint(community_bp, url_prefix='/api')
+    app.register_blueprint(coaching_bp, url_prefix='/api')
 
-    return app
+    # Initialize SocketIO with proper configuration
+    socketio = SocketIO(
+        app, 
+        cors_allowed_origins="*",
+        logger=True,
+        engineio_logger=True,
+        async_mode='eventlet'
+    )
+    
+    # Import and register SocketIO handlers
+    from backend.socketio_handler import register_handlers
+    register_handlers(socketio)
+
+    return app, socketio
 
 
 if __name__ == '__main__':
-    flask_app = create_app()
+    flask_app, socketio_instance = create_app()
     with flask_app.app_context():
         db.create_all()
-    flask_app.run(debug=True)
+    
+    # Run with proper configuration for SocketIO
+    socketio_instance.run(
+        flask_app, 
+        debug=True, 
+        port=5001, 
+        allow_unsafe_werkzeug=True,
+        host='0.0.0.0',
+        use_reloader=False  # Disable reloader to avoid conflicts
+    )
 

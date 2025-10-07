@@ -14,7 +14,7 @@ def login():
         return jsonify({"error": "Email and password required"}), 400
     user = User.query.filter_by(email=email).first()
     if user and user.check_password(password):
-        token = create_access_token(identity=user.id)
+        token = create_access_token(identity=str(user.id))
         return jsonify(token=token)
     return jsonify({"error": "Invalid credentials"}), 401
 
@@ -32,5 +32,5 @@ def register():
     user.set_password(password)
     db.session.add(user)
     db.session.commit()
-    token = create_access_token(identity=user.id)
+    token = create_access_token(identity=str(user.id))
     return jsonify(token=token), 201

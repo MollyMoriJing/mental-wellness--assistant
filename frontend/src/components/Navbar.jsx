@@ -4,7 +4,7 @@ export default function Navbar() {
   const navigate = useNavigate()
   const logout = () => {
     localStorage.removeItem('token')
-    navigate('/login')
+    window.location.href = '/login'
   }
   return (
     <div className="w-full bg-white border-b">

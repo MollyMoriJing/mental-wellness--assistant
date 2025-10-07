@@ -1,0 +1,668 @@
+/* Coaching & Mentoring Styles */
+.coaching {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.coaching-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.coaching-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--macaron-sky) 0%, var(--macaron-mint) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.coaching-subtitle {
+  color: var(--gray-600);
+  font-size: 1.125rem;
+}
+
+/* Available Coaches */
+.coaches-section {
+  background: var(--white);
+  border-radius: var(--radius-2xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-100);
+  margin-bottom: 2rem;
+}
+
+.coaches-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.coach-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.coach-card:hover {
+  border-color: var(--macaron-sky);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.coach-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.coach-avatar {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, var(--macaron-sky), #87ceeb);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.coach-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.coach-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 0.25rem;
+}
+
+.coach-badge {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  background: linear-gradient(135deg, var(--macaron-sky), #87ceeb);
+  color: white;
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.coach-bio {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.coach-request-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, var(--macaron-sky) 0%, var(--macaron-mint) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.coach-request-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.coach-request-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Request Session Form */
+.request-session {
+  background: var(--white);
+  border-radius: var(--radius-2xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-100);
+  margin-bottom: 2rem;
+}
+
+.request-session-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.session-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.session-form-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.session-form-input,
+.session-form-select,
+.session-form-textarea {
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  background: var(--gray-50);
+  transition: all 0.2s ease;
+}
+
+.session-form-input:focus,
+.session-form-select:focus,
+.session-form-textarea:focus {
+  outline: none;
+  border-color: var(--macaron-sky);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1);
+}
+
+.session-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.session-submit-button {
+  align-self: flex-end;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, var(--macaron-sky) 0%, var(--macaron-mint) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.session-submit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.session-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.session-form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+/* Coaching Sessions */
+.sessions-section {
+  background: var(--white);
+  border-radius: var(--radius-2xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-100);
+}
+
+.sessions-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.sessions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.session-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.session-card:hover {
+  border-color: var(--macaron-sky);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.session-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.session-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 0.5rem;
+}
+
+.session-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.session-status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.session-status.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.session-status.completed {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.session-status.cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.session-description {
+  color: var(--gray-700);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.session-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-bottom: 1rem;
+}
+
+.session-participants {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.session-schedule {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.session-view-button {
+  position: relative;
+  z-index: 70;
+  pointer-events: auto;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--macaron-sky) 0%, var(--macaron-mint) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.session-view-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Session Chat Modal */
+.session-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.session-modal-content {
+  background: var(--white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--gray-100);
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.session-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  background: var(--gray-100);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  color: var(--gray-600);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.session-modal-close:hover {
+  background: var(--gray-200);
+  color: var(--gray-700);
+}
+
+.session-modal-header {
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid var(--gray-100);
+  background: linear-gradient(135deg, var(--macaron-sky) 0%, var(--macaron-mint) 100%);
+  color: white;
+}
+
+.session-modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.session-modal-meta {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.session-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.session-messages {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #fef7f0 0%, #f0f9ff 50%, #faf5ff 100%);
+}
+
+.session-message {
+  display: flex;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.session-message.user {
+  justify-content: flex-end;
+}
+
+.session-message.coach {
+  justify-content: flex-start;
+}
+
+.session-message-bubble {
+  max-width: 70%;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-2xl);
+  position: relative;
+  word-wrap: break-word;
+  box-shadow: var(--shadow-sm);
+}
+
+.session-message.user .session-message-bubble {
+  background: linear-gradient(135deg, var(--macaron-sky) 0%, var(--macaron-mint) 100%);
+  color: white;
+  border-bottom-right-radius: var(--radius-sm);
+}
+
+.session-message.coach .session-message-bubble {
+  background: var(--white);
+  color: var(--gray-800);
+  border: 1px solid var(--gray-200);
+  border-bottom-left-radius: var(--radius-sm);
+}
+
+.session-message-content {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.session-message-time {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.session-message.user .session-message-time {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.session-message.coach .session-message-time {
+  color: var(--gray-500);
+}
+
+.session-input-container {
+  padding: 1.5rem;
+  background: var(--white);
+  border-top: 1px solid var(--gray-100);
+}
+
+.session-input-form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.session-input {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  font-size: 0.875rem;
+  resize: none;
+  min-height: 44px;
+  max-height: 120px;
+  background: var(--gray-50);
+  transition: all 0.2s ease;
+}
+
+.session-input:focus {
+  outline: none;
+  border-color: var(--macaron-sky);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.1);
+}
+
+.session-send-button {
+  padding: 0.875rem;
+  background: linear-gradient(135deg, var(--macaron-sky) 0%, var(--macaron-mint) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  box-shadow: var(--shadow-sm);
+}
+
+.session-send-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.session-send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Empty States */
+.empty-coaches,
+.empty-sessions {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--gray-500);
+}
+
+.empty-coaches-icon,
+.empty-sessions-icon {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, var(--macaron-sky), #87ceeb);
+  border-radius: var(--radius-2xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: white;
+  font-size: 2rem;
+}
+
+.empty-coaches-title,
+.empty-sessions-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 0.5rem;
+}
+
+.empty-coaches-description,
+.empty-sessions-description {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .coaching {
+    padding: 1rem 0.5rem;
+  }
+  
+  .coaching-title {
+    font-size: 2rem;
+  }
+  
+  .coaches-section,
+  .request-session,
+  .sessions-section {
+    padding: 1.5rem;
+  }
+  
+  .coaches-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .session-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .session-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .session-modal-content {
+    margin: 0.5rem;
+    max-height: calc(100vh - 1rem);
+  }
+  
+  .session-modal-header {
+    padding: 1.5rem;
+  }
+  
+  .session-messages {
+    padding: 1rem;
+  }
+  
+  .session-message-bubble {
+    max-width: 85%;
+  }
+  
+  .session-input-container {
+    padding: 1rem;
+  }
+  
+  .session-input-form {
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .coaches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .coaches-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
