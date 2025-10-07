@@ -58,7 +58,7 @@ fi
 
 # Login to Railway
 echo "Logging into Railway..."
-railway login
+railway login --browserless
 
 # Deploy backend to Railway
 echo "Deploying to Railway..."
