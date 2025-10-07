@@ -33,6 +33,16 @@ def create_app():
     @app.get('/api/health')
     def health():
         return {"status": "ok"}
+    
+    @app.get('/')
+    def root():
+        return {
+            "message": "Mental Wellness Assistant API",
+            "status": "running",
+            "frontend": "Deploy frontend to Vercel and connect to this API",
+            "api_docs": "/api/health",
+            "login": "/api/auth/login"
+        }
 
     app.register_blueprint(auth_bp, url_prefix='/api')
     app.register_blueprint(user_bp, url_prefix='/api')
