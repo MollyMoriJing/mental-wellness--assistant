@@ -62,10 +62,11 @@ if __name__ == '__main__':
         db.create_all()
     
     # Run with proper configuration for SocketIO
+    port = int(os.environ.get('PORT', 5001))
     socketio_instance.run(
         flask_app, 
-        debug=True, 
-        port=5001, 
+        debug=False,  # Disable debug in production
+        port=port, 
         allow_unsafe_werkzeug=True,
         host='0.0.0.0',
         use_reloader=False  # Disable reloader to avoid conflicts
