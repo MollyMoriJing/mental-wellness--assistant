@@ -46,8 +46,7 @@ def create_app():
         app, 
         cors_allowed_origins="*",
         logger=True,
-        engineio_logger=True,
-        async_mode='eventlet'
+        engineio_logger=True
     )
     
     # Import and register SocketIO handlers
